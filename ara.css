@@ -1,6 +1,87 @@
+/*-----------------SEKCIJA ZA NAVBAR-----------------------*/
+nav{
+  background-color: #3b3b3b;
+}
+
+ul li a{
+  margin-right: 10px;
+}
+
+nav li a{
+  color: white !important;
+}
+
+nav li a:hover{
+  color: #4287f5 !important;
+}
+
+nav i {
+  margin-right: 5px;
+}
+
+.navbar .navbar-brand img{
+  max-height: 30px !important;
+}
+
+.dropdown-menu{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.dropdown-menu li a{
+  color: black !important;
+}
+
+.dropdown-menu li a:hover{
+  color:white !important;
+  background-color: #4287f5;
+}
+
+.dropdown:hover .dropdown-menu{
+  display:block;
+}
+
+.dropdown-divider{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.dropdown-item{
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+p.dropdown-item{
+  margin-bottom: 0px;
+}
+
+.navbar-nav{
+  align-items: center;
+}
+
+.nav-item{
+  text-align: center;
+}
+
+.navbar-toggler {
+  border:none;
+  background-color: #4287f5;
+}
+
+.profile-pic{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.avatar{
+  align-self: center;
+}
+
+/*----------------------------------------------------------*/
 /* --------------------SEKCIJA ZA PRIJAVU/REGISTRACIJU KORISNIKA -----------------------------------------*/
 #registracija{
-  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)),url(reg.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)),url(AllPictures/reg.jpg);
   background-size: cover;
   background-position: center;
   color: #efefef !important;

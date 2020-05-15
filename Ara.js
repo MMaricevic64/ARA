@@ -51,6 +51,9 @@ $("#log_butt").click(function(){      //ako se pritisne signup -> prikazuje se L
   $('#licenca select option:first').prop('selected',true); //selektira prvu opcija koja je Odaberi licencu ronjenja
 });
 
+$('#hamburger').click(function(){   //mijenjanje ikonice od Menija
+   $(this).find('span').toggleClass(' fa-times');
+});
 
 function validacija_forme(){
   var error = 0;  //kontrolna varijabla za gresku

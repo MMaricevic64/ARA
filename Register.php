@@ -1,7 +1,12 @@
-
 <?php
 session_start();
-include("navbar.php");
+
+if(isset($_SESSION['ime'])){  //sluzi da se nemoze vratit na ovu stranicu dok god je neko logiran
+  header("location: Homepage.php");
+  exit();
+}
+
+include("Navbar.php");
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   include("DBI.php");  //informacije o bazi podataka
@@ -19,7 +24,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $licenca = $mysqli->escape_string($_POST['licenca']);
     $e_mail = $mysqli->escape_string($_POST['email_reg']);
     $lozinka = $mysqli->escape_string(md5($_POST['lozinka_reg'])); //kriptiranje lozinke md5
-    $profile_img_name = $mysqli->escape_string(time(). ' ' .$_FILES['profile_img']['name']);  //dohvacanje imena slike i dodavanje vremena ispred -> da mogu bit dvije site slike
+    if (is_uploaded_file($_FILES['profile_img']['tmp_name'])) {
+      $profile_img_name = $mysqli->escape_string(time(). ' ' .$_FILES['profile_img']['name']);  //dohvacanje imena slike i dodavanje vremena ispred -> da mogu bit dvije site slike
+    }
+    else{
+      $profile_img_name = $mysqli->escape_string('placeholderimg.png');
+    }
     //Uređivanje imena i prezimena prije unosenja u bazu podataka
     $ime = strtolower($ime);
     $ime = ucfirst($ime);
@@ -42,7 +52,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //Spremanje varijabli u Seasion dok se korisnik ne Logouta
     $_SESSION['ime'] = $ime;
     $_SESSION['prezime'] = $prezime;
-    header("location: ARA_naslovna.php");
+    $_SESSION['e_mail'] = $e_mail;
+    header("location: Homepage.php");
     }
   }
 
@@ -61,20 +72,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($result->num_rows == 0){
       $_SESSION['email_err_pri'] = "Ne postoji korisnik sa tim e-mailom!";
       $_SESSION['prikazi_login'] = "da";
-      header("location: registerform.php");
+      header("location: Register.php");
     }
     else{
 
       $user = $result->fetch_assoc();
       if($lozinka  == $user['Lozinka']){
-        $_SESSION['ime'] = $ime;
-        $_SESSION['prezime'] = $prezime;
-        header("location: ARA_naslovna.php");
+        $_SESSION['ime'] = $user['Ime'];
+        $_SESSION['prezime'] = $user['Prezime'];
+        $_SESSION['e_mail'] = $user['Email'];
+        header("location: Homepage.php");
       }
       else{
         $_SESSION['lozinka_err'] = "Unesena je kriva lozinka!";
         $_SESSION['prikazi_login'] = "da";
-        header("location: registerform.php");
+        header("location: Register.php");
       }
     }
   }
@@ -100,7 +112,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <div class="row text-center">
 
               <div class="signup-form">
-              <form id="reg_form" action="registerform.php" method ="post" onsubmit="return validacija_forme()" enctype="multipart/form-data">
+              <form id="reg_form" action="Register.php" method ="post" onsubmit="return validacija_forme()" enctype="multipart/form-data">
                 <div class="form-group">
                     <img src = "profile_images/placeholderimg.png" id = "profileDisplay" onclick="promjeni_sliku();">
                     <input type="file" name = "profile_img" id = "profile_img" style = "display: none;" onchange="prikazi_sliku(this)">
@@ -135,7 +147,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
               </div>
 
               <div class="login-form">
-                <form id="log_form" action="registerform.php" method ="post" onsubmit="promjeni();" enctype="multipart/form-data">
+                <form id="log_form" action="Register.php" method ="post" onsubmit="promjeni();" enctype="multipart/form-data">
                   <div class="form-group">
                     <input type="email" name="email_pri" class="form-control <?php if(isset($_SESSION['email_err_pri'])){echo "is-invalid";}?>" placeholder="E-mail" required>
                     <div  class="invalid-feedback"><?php if(isset($_SESSION['email_err_pri'])){echo $_SESSION['email_err_pri'];} ?></div>
