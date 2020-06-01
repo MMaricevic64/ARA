@@ -2,8 +2,8 @@ $(document).ready(function(){
 
   // sakrivanje login forme kod loada
   if($("#inputHiddenId").val() == "register") {
-    $(".signup-form").show();
-    $(".login-form").hide();
+    $("#reg_form").show();
+    $("#log_form").hide();
     $("#log_butt").addClass("signbutt_pasive");
     $("#log_butt").removeClass("signbutt_active");
     $("#reg_butt").addClass("signbutt_active");
@@ -11,8 +11,8 @@ $(document).ready(function(){
   }
   //sakrivanje register forme kod loada
   if($("#inputHiddenId").val() == "login"){
-    $(".login-form").show();
-    $(".signup-form").hide();
+    $("#log_form").show();
+    $("#reg_form").hide();
     $("#reg_butt").addClass("signbutt_pasive");
     $("#reg_butt").removeClass("signbutt_active");
     $("#log_butt").addClass("signbutt_active");
@@ -21,8 +21,8 @@ $(document).ready(function(){
 });
 
 $("#reg_butt").click(function(){        //ako se pritisne signin -> prikazuje se Register forma -> mijenja se boja donjeg bordera i boja fonta
-  $(".signup-form").show();
-  $(".login-form").hide();
+  $("#reg_form").show();
+  $("#log_form").hide();
   $("#log_butt").addClass("signbutt_pasive");
   $("#log_butt").removeClass("signbutt_active");
   $("#reg_butt").addClass("signbutt_active");
@@ -36,8 +36,8 @@ $("#reg_butt").click(function(){        //ako se pritisne signin -> prikazuje se
 });
 
 $("#log_butt").click(function(){      //ako se pritisne signup -> prikazuje se Login forma -> mijenja se boja donjeg bordera i boja fonta
-  $(".login-form").show();
-  $(".signup-form").hide();
+  $("#log_form").show();
+  $("#reg_form").hide();
   $("#reg_butt").addClass("signbutt_pasive");
   $("#reg_butt").removeClass("signbutt_active");
   $("#log_butt").addClass("signbutt_active");

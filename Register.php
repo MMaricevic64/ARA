@@ -100,7 +100,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       <div class="row text-center" style="padding-top: 40px">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-          <div id="container_form" class="container">
+          <div class="container container_form">
             <div class="row text-center" style = "padding-bottom: 20px;">
                 <div class="col-md-6" style="padding: 0px 0px">
                   <button id="reg_butt" class="btn signbutt">Registriraj se</button>
@@ -111,8 +111,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             </div>
             <div class="row text-center">
 
-              <div class="signup-form">
-              <form id="reg_form" action="Register.php" method ="post" onsubmit="return validacija_forme()" enctype="multipart/form-data">
+
+              <form id="reg_form" class = "form_edit" style=" padding-top: 0px;" action="Register.php" method ="post" onsubmit="return validacija_forme()" enctype="multipart/form-data">
                 <div class="form-group">
                     <img src = "profile_images/placeholderimg.png" id = "profileDisplay" onclick="promjeni_sliku();">
                     <input type="file" name = "profile_img" id = "profile_img" style = "display: none;" onchange="prikazi_sliku(this)">
@@ -144,10 +144,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 </div>
                 <button type="submit" class="btn submit" name="register_butt">Registracija</button>
               </form>
-              </div>
 
-              <div class="login-form">
-                <form id="log_form" action="Register.php" method ="post" onsubmit="promjeni();" enctype="multipart/form-data">
+
+
+                <form id="log_form"  class = "form_edit" style=" padding-top: 0px;" action="Register.php" method ="post" enctype="multipart/form-data">
                   <div class="form-group">
                     <input type="email" name="email_pri" class="form-control <?php if(isset($_SESSION['email_err_pri'])){echo "is-invalid";}?>" placeholder="E-mail" required>
                     <div  class="invalid-feedback"><?php if(isset($_SESSION['email_err_pri'])){echo $_SESSION['email_err_pri'];} ?></div>
@@ -161,7 +161,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                   </div>
                   <button type="submit" class="btn submit" name="login_butt">Prijava</button>
                 </form>
-              </div>
+
 
             </div>
           </div>

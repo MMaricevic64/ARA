@@ -81,7 +81,7 @@ p.dropdown-item{
 /*----------------------------------------------------------*/
 /* --------------------SEKCIJA ZA PRIJAVU/REGISTRACIJU KORISNIKA -----------------------------------------*/
 #registracija{
-  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)),url(AllPictures/reg.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)),url(AllPictures/Register.jpg);
   background-size: cover;
   background-position: center;
   color: #efefef !important;
@@ -91,13 +91,14 @@ p.dropdown-item{
   height: 100vh;
 }
 
+/*Natpis na stranici */
 #registracija h1{
   text-align: center;
   color: #efefef !important;
 }
 
-/* Container u kojem se nalazi Forma */
-#container_form{
+/* Container u kojem se nalazi Forma i gumbovi Prijava/Registracija*/
+.container_form{
   -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
   -moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
   box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
@@ -105,34 +106,15 @@ p.dropdown-item{
   border: 1px solid white;
 }
 
-/* Razvlacenje Forme duz cijele sirine row-a */
-.signup-form{
-  width: 100%;
-}
-
-.login-form{
-  width: 100%;
-}
-
-/* ID forme - postavljanje u odnosu na container u kojem se nalazi */
-#reg_form{
-  padding-top: 0px;
+/* Klasa za smjestanje formi u Container */
+.form_edit{
+  padding-top: 30px;
   padding-right: 40px;
   padding-left: 40px;
   padding-bottom: 30px;
   width: 100%;
   height: 100%;
 }
-
-#log_form{
-  padding-top: 0px;
-  padding-right: 40px;
-  padding-left: 40px;
-  padding-bottom: 30px;
-  width: 100%;
-  height: 100%;
-}
-
  /* GUMBOVI ZA PRIJAVA/REGISTRACIJA */
 
 .signbutt{
@@ -158,40 +140,40 @@ p.dropdown-item{
   color : black;
 }
 
-/* REGISTER FORMA */
+/* REGISTER/LOGIN FORMA inputi */
 
-#registracija .form-control{                /*inputi forme */
+#registracija .form-control, #kontakt .form-control{                /*inputi forme */
   color: white !important;
   background-color: transparent;
   border: 1px solid #fff;
   border-radius: 10px;
 }
 
-#registracija ::-webkit-input-placeholder { /* Edge */
+#registracija ::-webkit-input-placeholder, #kontakt ::-webkit-input-placeholder { /* Edge */
   color: white !important;
 }
 
-#registracija :-ms-input-placeholder { /* Internet Explorer 10-11 */
+#registracija :-ms-input-placeholder , #kontakt :-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: white !important;
 }
 
-#registracija input::placeholder{
+#registracija input::placeholder , #kontakt input::placeholder{
   color: white !important;
 }
 
-#registracija .form-control:focus{
+#registracija .form-control:focus , #kontakt .form-control:focus{
   color: white !important;
   background-color: rgba(0,0,0,0.188);
   border: 1px solid #4287f5;
   box-shadow: 3px 3px 20px #4287f5;
 }
 
-#registracija .submit{              /* gumbovi Prijava i Registracija za submit forme */
+#registracija .submit , #kontakt .submit{              /* gumbovi Prijava i Registracija za submit forme */
   color: white;
   border-color: white;
 }
 
-#registracija  .submit:hover{
+#registracija  .submit:hover , #kontakt .submit:hover{
   background-color: #4287f5;
   color: white;
 }
@@ -223,3 +205,23 @@ p.dropdown-item{
 }
 
 /*-----------------------------------------------------------------------------------------------*/
+/*------------------------KONTAKT STRANICA ------------------------------------------------------*/
+#kontakt{
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url(AllPictures/Contact.jpg);
+  background-size: cover;
+  color: #efefef !important;
+  background-attachment: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100vh;
+}
+
+.alert{
+  margin-top: 15px;
+  margin-bottom: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+}
+
+/*----------------------------------------------------------------------------------------------*/
