@@ -94,7 +94,7 @@ p.dropdown-item{
 /*Natpis na stranici */
 #registracija h1{
   text-align: center;
-  color: #efefef !important;
+  color: white !important;
 }
 
 /* Container u kojem se nalazi Forma i gumbovi Prijava/Registracija*/
@@ -222,6 +222,154 @@ p.dropdown-item{
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: left;
+}
+
+/*----------------------------------------------------------------------------------------------*/
+/*------------------------NASLOVNA STRANICA ----------------------------------------------------*/
+/*Slideshow section */
+@media (min-width: 900px) {
+  .carousel-item img{
+    height: 100vh;
+  }
+}
+
+.carousel-caption h1{
+  font-size: 50px;
+  color: white;
+  font-family: 'Apple Chancery' ,cursive;
+}
+
+/*Service section */
+#services{
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url(AllPictures/Services.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #efefef !important;
+  background-attachment: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#services h1{
+  text-align: center;
+  color: white !important;
+  margin-bottom: 20px;
+}
+
+#services h1::after{
+  content: '';
+  background: white;
+  display: block;
+  height: 3px;
+  width: 300px;
+  margin: 20px auto 5px;
+}
+
+.services{
+  margin-top: 40px;
+}
+
+.circle-icon{
+   display: block;
+  font-size: 25px; /* velicina malih ikonica */
+  margin: 20px auto;
+  height: 65px;
+  width: 65px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  line-height: 50px;
+}
+
+.imgicon{
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}
+
+#services p{
+  font-size: 20px;
+  color: #ccc;
+}
+
+.services .col-md-4:hover{
+  background-color: #4287f5;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+/*----------------------------------------------------------------------------------------------*/
+/*----------------------------------KLUBOVI-----------------------------------------------------*/
+#ron_klubovi{
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url(AllPictures/Clubs.jpg);
+  background-size: cover;
+  color: #efefef !important;
+  background-attachment: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100vh;
+}
+
+.table-info > th{
+  background-color: #4287f5;
+}
+
+.btnjoinclub{
+  color: white;
+  border-color: white;
+  margin-left: 30px;
+  background-color: green;
+}
+
+.btnleaveclub{
+  color: white;
+  border-color: white;
+  background-color: red;
+}
+
+.btnjoinclub:hover , .btnleaveclub:hover{
+  background-color: transparent;
+  color: white;
+}
+/*----------------------------------------------------------------------------------------------*/
+/*-----------------------------------Lokaliteti-------------------------------------------------*/
+
+/*----------------------------------------------------------------------------------------------*/
+/*-------------------------------Media Queries za hedaere i paragrafe---------------------------*/
+
+@media (max-width: 400px) {
+ #naslovna h1 {
+   font-size: 20px;
+}
+#naslovna h3{
+  font-size: 25px;
+}
+#naslovna p{
+  font-size: 18px !important;
+}
+#kontakt h1 {
+  font-size: 30px;
+}
+#registracija h1 {
+  font-size: 30px;
+}
+}
+
+@media (min-width: 400px) and (max-width: 720px) {
+#naslovna h1 {
+  font-size: 30px;
+}
+}
+
+@media (min-width: 720px) and (max-width: 1440px) {
+#naslovna h1 {
+  font-size: 40px;
+}
+}
+
+@media (min-width: 1440px){
+#naslovna h1 {
+  font-size: 45px;
+}
 }
 
 /*----------------------------------------------------------------------------------------------*/
