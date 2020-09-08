@@ -142,38 +142,77 @@ p.dropdown-item{
 
 /* REGISTER/LOGIN FORMA inputi */
 
-#registracija .form-control, #kontakt .form-control{                /*inputi forme */
+#registracija .form-control, #kontakt .form-control, #lokaliteti .form-control, #uroni .form-control, #ekoakcije .form-control{                /*inputi forme */
   color: white !important;
   background-color: transparent;
   border: 1px solid #fff;
   border-radius: 10px;
 }
 
-#registracija ::-webkit-input-placeholder, #kontakt ::-webkit-input-placeholder { /* Edge */
+#lokaliteti .form-control{
+  color: black !important;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+#lokaliteti ::-webkit-input-placeholder { /* Edge */
+  color:black !important;
+}
+
+#lokaliteti :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: black !important;
+}
+
+#lokaliteti input::placeholder{
+  color: black !important;
+}
+
+#registracija ::-webkit-input-placeholder, #kontakt ::-webkit-input-placeholder, #uroni ::-webkit-input-placeholder, #ekoakcije ::-webkit-input-placeholder{ /* Edge */
   color: white !important;
 }
 
-#registracija :-ms-input-placeholder , #kontakt :-ms-input-placeholder { /* Internet Explorer 10-11 */
+#registracija :-ms-input-placeholder , #kontakt :-ms-input-placeholder, #uroni :-ms-input-placeholder, #ekoakcije :-ms-input-placeholder{ /* Internet Explorer 10-11 */
   color: white !important;
 }
 
-#registracija input::placeholder , #kontakt input::placeholder{
+#registracija input::placeholder , #kontakt input::placeholder, #uroni input::placeholder,  #ekoakcije input::placeholder{
   color: white !important;
 }
 
-#registracija .form-control:focus , #kontakt .form-control:focus{
+#registracija .form-control:focus , #kontakt .form-control:focus, #uroni .form-control:focus, #ekoakcije .form-control:focus{
   color: white !important;
   background-color: rgba(0,0,0,0.188);
   border: 1px solid #4287f5;
   box-shadow: 3px 3px 20px #4287f5;
 }
 
-#registracija .submit , #kontakt .submit{              /* gumbovi Prijava i Registracija za submit forme */
-  color: white;
-  border-color: white;
+#lokaliteti .form-control:focus{
+  color: black !important;
+  border: 1px solid #4287f5;
 }
 
-#registracija  .submit:hover , #kontakt .submit:hover{
+#registracija .submit , #kontakt .submit, #ron_klubovi .submit, #uroni .submit, #ekoakcije .submit, #rezultati .submit{              /* gumbovi za submit formi */
+  color: white;
+  border-color: white;
+  margin:auto;
+  display:block;
+}
+
+#lokaliteti .submit{
+  color: black;
+  border-color: black;
+  margin:auto;
+  display:block;
+}
+
+#uroni .openform, #ekoakcije .openform{
+  color: black;
+  border-color: black;
+  margin:auto;
+  display:block;
+}
+
+#registracija  .submit:hover , #kontakt .submit:hover, #lokaliteti .submit:hover, #ron_klubovi .submit:hover, #uroni .submit:hover, #uroni .openform:hover,#ekoakcije .submit:hover, #ekoakcije .openform:hover, #rezultati .submit:hover {
   background-color: #4287f5;
   color: white;
 }
@@ -313,26 +352,132 @@ p.dropdown-item{
   background-color: #4287f5;
 }
 
-.btnjoinclub{
+.btngreen{
   color: white;
   border-color: white;
   margin-left: 30px;
   background-color: green;
 }
 
-.btnleaveclub{
+.btnred{
   color: white;
   border-color: white;
   background-color: red;
 }
 
-.btnjoinclub:hover , .btnleaveclub:hover{
+.btnoker{
+  color: white;
+  border-color: white;
+  margin-left: 30px;
+  background-color: #f5b642;
+}
+.btngreen:hover , .btnred:hover{
+  background-color: transparent;
+  color: white;
+}
+
+.club-pic{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+/*----------------------------------------------------------------------------------------------*/
+/*-----------------------------------Lokaliteti-------------------------------------------------*/
+#lokaliteti{
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url(AllPictures/Locality.jpg);
+  background-size: cover;
+  color: #efefef !important;
+  background-attachment: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100vh;
+}
+
+#map{
+  height: 400px;
+  width: 100%;
+}
+
+.descriptiontext{
+  color:black;
+  padding:10px 10px 10px 10px;
+  margin-bottom:0px;
+  font-size: 14px !important;
+}
+
+.comment_box{
+  border:1px solid black;
+  border-radius:20px;
+  background-color:#4287f5;
+  margin-bottom: 10px;
+}
+
+.comment_text{
+  color: white;
+  padding:10px 10px 10px 10px;
+  margin-bottom: 0px !important;
+}
+/*----------------------------------------------------------------------------------------------*/
+/*----------------------------------Profile settings--------------------------------------------*/
+#postavke{
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url(AllPictures/ProfileSettings.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #efefef !important;
+  background-attachment: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100vh;
+}
+/*----------------------------------------------------------------------------------------------*/
+/*--------------------------------Dive----------------------------------------------------------*/
+#uroni{
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url(AllPictures/Dive.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #efefef !important;
+  background-attachment: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100vh;
+}
+
+.joineventbutt{
+  color: white;
+  border-color: white;
+  background-color: green;
+  margin:auto;
+  display:block;
+}
+
+.joineventbutt:hover{
   background-color: transparent;
   color: white;
 }
 /*----------------------------------------------------------------------------------------------*/
-/*-----------------------------------Lokaliteti-------------------------------------------------*/
-
+/*------------------------------Eco Actions-----------------------------------------------------*/
+#ekoakcije{
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url(AllPictures/EcoActions.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #efefef !important;
+  background-attachment: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100vh;
+}
+/*----------------------------------------------------------------------------------------------*/
+/*-------------------------------Rezultati------------------------------------------------------*/
+#rezultati{
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url(AllPictures/Results.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #efefef !important;
+  background-attachment: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100vh;
+}
 /*----------------------------------------------------------------------------------------------*/
 /*-------------------------------Media Queries za hedaere i paragrafe---------------------------*/
 
@@ -352,10 +497,22 @@ p.dropdown-item{
 #registracija h1 {
   font-size: 30px;
 }
+#lokaliteti h1{
+  font-size: 30px;
+}
 }
 
 @media (min-width: 400px) and (max-width: 720px) {
 #naslovna h1 {
+  font-size: 30px;
+}
+#lokaliteti h1{
+  font-size: 30px;
+}
+#kontakt h1 {
+  font-size: 30px;
+}
+#registracija h1 {
   font-size: 30px;
 }
 }
@@ -364,12 +521,39 @@ p.dropdown-item{
 #naslovna h1 {
   font-size: 40px;
 }
+#lokaliteti h1{
+  font-size: 40px;
+}
+#kontakt h1 {
+  font-size: 40px;
+}
+#registracija h1 {
+  font-size: 40px;
+}
+}
+
+@media (min-width: 1440px) and (max-width: 2000px) {
+  #map{
+    height: 600px;
+  }
+}
+
+@media (min-width: 2000px){
+  #map{
+    height: 100vh;
+  }
 }
 
 @media (min-width: 1440px){
 #naslovna h1 {
   font-size: 45px;
 }
+}
+
+@media (max-width: 575px){
+  #savecommentdiv{
+    margin-top: 10px !important;
+  }
 }
 
 /*----------------------------------------------------------------------------------------------*/

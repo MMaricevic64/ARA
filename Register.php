@@ -81,6 +81,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['ime'] = $user['Ime'];
         $_SESSION['prezime'] = $user['Prezime'];
         $_SESSION['e_mail'] = $user['Email'];
+        if($user['Email'] == "admin@gmail.com"){
+          $_SESSION['admin'] = true;
+        }
         header("location: Homepage.php");
       }
       else{
@@ -111,11 +114,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             </div>
             <div class="row text-center">
 
-
               <form id="reg_form" class = "form_edit" style=" padding-top: 0px;" action="Register.php" method ="post" onsubmit="return validacija_forme()" enctype="multipart/form-data">
                 <div class="form-group">
-                    <img src = "profile_images/placeholderimg.png" id = "profileDisplay" onclick="promjeni_sliku();">
-                    <input type="file" name = "profile_img" id = "profile_img" style = "display: none;" onchange="prikazi_sliku(this)">
+                    <img src = "profile_images/placeholderimg.png" id = "profileDisplay" onclick="promjeni_sliku_profila();">
+                    <input type="file" name = "profile_img" id = "profile_img" style = "display: none;" onchange="prikazi_sliku_profila(this)">
                 </div>
                 <label> Odaberite sliku profila </label>
                 <div class="form-group">

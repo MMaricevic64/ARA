@@ -18,6 +18,7 @@ $(document).ready(function(){
     $("#log_butt").addClass("signbutt_active");
     $("#log_butt").removeClass("signbutt_pasive");
   }
+
 });
 
 $("#reg_butt").click(function(){        //ako se pritisne signin -> prikazuje se Register forma -> mijenja se boja donjeg bordera i boja fonta
@@ -111,16 +112,32 @@ function allletters(element){   //funkcija za provjeru jesu li samo slova sadrž
     }
 }
 
-function promjeni_sliku(){        //funkcije za promjenu slike prilikom izbora za registraciju
+function promjeni_sliku_profila(){        //funkcije za promjenu slike prilikom izbora za registraciju
   document.getElementById("profile_img").click();
 }
 
-function prikazi_sliku(element){
+function promjeni_sliku_kluba(){        //funkcije za promjenu slike prilikom izbora za registraciju
+  document.getElementById("club_img").click();
+}
+
+function prikazi_sliku_profila(element){
   if(element.files[0]){
     var reader = new FileReader();
 
     reader.onload = function(element){
       document.getElementById("profileDisplay").setAttribute('src',element.target.result);
+    }
+
+    reader.readAsDataURL(element.files[0]);
+  }
+}
+
+function prikazi_sliku_kluba(element){
+  if(element.files[0]){
+    var reader = new FileReader();
+
+    reader.onload = function(element){
+      document.getElementById("clubpicdisplay").setAttribute('src',element.target.result);
     }
 
     reader.readAsDataURL(element.files[0]);

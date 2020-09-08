@@ -76,7 +76,7 @@
                             </a>
                               <ul class="dropdown-menu">
                                 <li>
-                                <p class="dropdown-item"> <?php echo $_SESSION['ime'];echo ' ';echo $_SESSION['prezime'];?> </p>
+                                <p class="dropdown-item"><?php echo $_SESSION['ime'];echo ' ';echo $_SESSION['prezime'];?></p>
                                 </li>
                                 <li><a class="dropdown-item" href="ProfileSettings.php"><i class="fas fa-user-edit"></i>
                                       Postavke profila
