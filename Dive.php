@@ -110,7 +110,10 @@ function get_all_data($type_of_data){ //Funkcija za dohvacanje lokacija
           success: function(response)
           {
             //Dohvati ID_korisnika
-            <?php $user_query = $mysqli->query("SELECT ID_korisnika FROM korisnici WHERE Email = '$e_mail'");
+            <?php
+            if(isset($_SESSION['e_mail'])){
+            $_mail = $_SESSION['e_mail'];
+            $user_query = $mysqli->query("SELECT ID_korisnika FROM korisnici WHERE Email = '$e_mail'");
             $userID = $user_query -> fetch_assoc();
             $ID = $userID['ID_korisnika']; ?>
 
@@ -142,6 +145,7 @@ function get_all_data($type_of_data){ //Funkcija za dohvacanje lokacija
                 document.getElementById("diveevent"+ID_urona).innerHTML = "Pridruzi se";
                 document.getElementById("diveevent"+ID_urona).value = "join";
             }
+            <?php } ?>
            }
       });
     }
@@ -187,7 +191,8 @@ function get_all_data($type_of_data){ //Funkcija za dohvacanje lokacija
             var html= response.html;
             document.getElementById("allevents").innerHTML = html + document.getElementById("allevents").innerHTML;
             //Dohvati ID korisnika
-            <?php if(isset($_SESSION['e_mail'])) $e_mail = $_SESSION['e_mail'];
+            <?php if(isset($_SESSION['e_mail'])){
+            $e_mail = $_SESSION['e_mail'];
             $user_query = $mysqli->query("SELECT ID_korisnika FROM korisnici WHERE Email = '$e_mail'");
             $userID = $user_query -> fetch_assoc();
             $ID = $userID['ID_korisnika'];?>
@@ -204,6 +209,7 @@ function get_all_data($type_of_data){ //Funkcija za dohvacanje lokacija
             //Kreiraj novi zahtjev i dodaj ga u postojece
             var newrequest = [zahtjev[0][0],zahtjev[0][1],zahtjev[0][2],zahtjev[0][3]];
             claim_status.unshift(newrequest);
+          <?php } ?>
           }
       });
 
