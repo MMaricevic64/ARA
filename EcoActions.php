@@ -320,12 +320,13 @@ function get_all_data($type_of_data){ //Funkcija za dohvacanje lokacija
           }
 
           //Dodavanje novog lokaliteta
+          <?php if(isset($_SESSION['e_mail'])){ ?>
           google.maps.event.addListener(map, 'click', function(e) {
               //Zatvaranje infowindow-a
               infowindow.close();
               $("#event_form").hide();
           });
-
+          <?php } ?>
         }
 </script>
 

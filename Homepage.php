@@ -21,13 +21,13 @@
             <div class="carousel-item active">
                 <img class="d-block w-100" src="AllPictures/Slideshow1.jpg"/>
                 <div class="carousel-caption first-cap">
-                    <h1>Ronjenje je vaša strast?</h1>
+                    <h1>Ronjenje je Vaša strast?</h1>
                 </div>
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="AllPictures/Slideshow2.jpg"/>
                 <div class="carousel-caption sec-cap">
-                  <h1>More je vaš drugi dom?</h1>
+                  <h1>More je Vaš drugi dom?</h1>
                 </div>
             </div>
             <div class="carousel-item">

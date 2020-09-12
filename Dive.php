@@ -370,7 +370,7 @@ function get_all_data($type_of_data){ //Funkcija za dohvacanje lokacija
 
       }
 
-      //Dodavanje novog lokaliteta
+      //Dodavanje novog urona
       google.maps.event.addListener(map, 'click', function(e) {
           //Zatvaranje infowindow-a
           infowindow.close();

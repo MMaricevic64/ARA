@@ -149,6 +149,7 @@ var comments = <?php get_all_data("komentari") ?>;
         }
 
         //Dodavanje novog lokaliteta
+        <?php if(isset($_SESSION['e_mail'])){ ?>
         google.maps.event.addListener(map, 'click', function(e) {
             var lat = e.latLng.lat(); // lat of clicked point
             var lng = e.latLng.lng(); // lng of clicked point
@@ -191,6 +192,7 @@ var comments = <?php get_all_data("komentari") ?>;
             infowindow.setOptions({maxWidth:500});
             infowindow.open(map,marker);
         });
+        <?php } ?>
     }
 </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
